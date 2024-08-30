@@ -1,42 +1,62 @@
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-  }
-  header {
-    background: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-  }
-  section {
-    padding: 20px;
-    margin: 0 auto;
-    max-width: 800px;
-  }
-  h1, h2 {
-    color: #333;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  a {
-    color: #0066cc;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-  footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-  
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* Set background to black */
+  color: #f4f4f4; /* Set text color to off-white */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+header {
+  background: #111; /* Darker shade for header background */
+  color: #f4f4f4; /* Off-white text color */
+  padding: 20px;
+  text-align: center;
+}
+
+main {
+  flex: 1;
+  overflow-y: auto; /* Allow vertical scrolling */
+}
+
+section {
+  padding: 20px;
+  margin: 20px auto; /* Add margin for spacing */
+  max-width: 800px;
+  background: #222; /* Slightly lighter background for sections */
+  border-radius: 8px; /* Round corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* More pronounced shadow */
+}
+
+h1, h2 {
+  color: #f4f4f4; /* Off-white text color */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  color: #1e90ff; /* Bright blue color for links */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #add8e6; /* Light blue color on hover */
+  text-decoration: underline;
+}
+
+footer {
+  background: #111; /* Darker shade for footer background */
+  color: #f4f4f4; /* Off-white text color */
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
