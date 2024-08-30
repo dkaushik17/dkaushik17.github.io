@@ -5,14 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dhruv Kaushik | Portfolio</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
     <h1>Dhruv Kaushik</h1>
     <p>Backend Web Developer</p>
+    <nav>
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#mentorship">Mentorship</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
   <main>
     <section id="about">
+      
       <h2>About Me</h2>
       <p>
         With over 8 years of experience as a software engineer, 
@@ -30,10 +41,21 @@
     <section id="experience">
       <h2>Experience</h2>
       <ul>
-        <li>CreateBytes: Software Development Engineer III</li>
-        <li>MongoDB: Associate Consulting Engineer</li>
+        <li>
+          <button class="collapsible">CreateBytes: Software Development Engineer III</button>
+          <div class="content">
+            <p>At CreateBytes, I was responsible for leading the development of multiple web applications, implementing microservices architecture, and optimizing database performance. I also mentored junior developers and coordinated with cross-functional teams to deliver high-quality products on time.</p>
+          </div>
+        </li>
+        <li>
+          <button class="collapsible">MongoDB: Associate Consulting Engineer</button>
+          <div class="content">
+            <p>During my time at MongoDB, I assisted clients in migrating their databases to MongoDB, conducted performance tuning, and provided training sessions on best practices. I also worked on custom solutions for enterprise clients, helping them leverage MongoDB's full potential.</p>
+          </div>
+        </li>
       </ul>
     </section>
+    
     <section id="contact">
       <h2>Contact</h2>
       <p>You can reach me via email at <a href="mailto:dkaushik17@gmail.com">dkaushik17@gmail.com</a>.</p>
@@ -65,6 +87,16 @@
           </tbody>
       </table>
     </section>
+    <section id="mentorship">
+      <h2>Mentorship</h2>
+      <p>
+        In my current role, I have had the privilege of mentoring over 15 new developers. I designed and implemented a comprehensive training program that equips newbies with the necessary skills and knowledge to effectively contribute to projects within four weeks. This program covers various aspects of backend development, including microservices architecture, database management, and best practices in code quality and testing.
+      </p>
+      <p>
+        My mentorship approach is hands-on, encouraging new developers to engage with real-world projects early on, while providing continuous support and feedback to ensure their growth and confidence. Many of my mentees have successfully transitioned into key contributors in our team, demonstrating strong technical skills and a deep understanding of our development processes.
+      </p>
+    </section>
+    
   </main>
   <footer>
     <p>&copy; 2024 Dhruv Kaushik</p>

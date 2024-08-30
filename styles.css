@@ -11,16 +11,24 @@ body {
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+/* Style for the header to remain fixed */
 header {
   background: #111; /* Darker shade for header background */
   color: #f4f4f4; /* Off-white text color */
   padding: 20px;
   text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure the header stays on top of other content */
 }
 
+/* Adjust the top margin of the main content to prevent it from hiding behind the header */
 main {
   flex: 1;
-  overflow-y: auto; /* Allow vertical scrolling */
+  overflow-y: auto;
+  margin-top: 250px; /* Adjust this value to the height of your header */
+  padding-bottom: 80px; /* Add enough padding to prevent the footer from overlapping the last section */
 }
 
 section {
@@ -51,6 +59,29 @@ a:hover {
   text-decoration: underline;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 1rem;
+  background-color: #333; /* Slightly lighter background for the table */
+  border-radius: 8px; /* Round corners */
+  overflow: hidden; /* Clip content within rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Apply shadow to the table */
+}
+
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #444; /* Add a subtle border between rows */
+  color: #f4f4f4; /* Off-white text color */
+}
+
+tr:hover td {
+  background-color: #444; /* Slight highlight on row hover */
+}
+
+
 footer {
   background: #111; /* Darker shade for footer background */
   color: #f4f4f4; /* Off-white text color */
@@ -60,3 +91,96 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+/* Add this to your existing styles.css file */
+
+/* Style the collapsible button */
+.collapsible {
+  background-color: #111; /* Dark background */
+  color: #f4f4f4; /* Off-white text color */
+  cursor: pointer;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1rem;
+  border-radius: 4px; /* Round corners */
+  margin-bottom: 10px;
+}
+
+.collapsible:after {
+  content: '\002B'; /* Unicode character for "plus" sign */
+  color: #f4f4f4;
+  font-weight: bold;
+  float: right;
+}
+
+.active:after {
+  content: "\2212"; /* Unicode character for "minus" sign */
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #222; /* Slightly lighter background */
+  border-radius: 4px; /* Round corners for the content box */
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #f4f4f4; /* Off-white text color */
+}
+
+/* Add this to your existing styles.css file */
+
+#mentorship {
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  background: #222;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#mentorship h2 {
+  color: #f4f4f4;
+}
+
+#mentorship p {
+  color: #f4f4f4;
+  line-height: 1.6;
+}
+
+/* Navigation bar styles */
+nav {
+  position: sticky;
+  top: 60px; /* Place it just below the fixed header */
+  background-color: #111;
+  padding: 10px 20px;
+  z-index: 900; /* Ensure it stays below the header but above other content */
+}
+
+nav ul {
+  list-style-type: none; /* Remove bullet points */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Display as a horizontal list */
+  justify-content: center; /* Center the nav items */
+}
+
+nav ul li {
+  margin: 0 15px; /* Space between each nav item */
+}
+
+nav ul li a {
+  color: #f4f4f4; /* Off-white text color */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+nav ul li a:hover {
+  color: #1e90ff; /* Bright blue on hover */
+}
+
+
