@@ -9,10 +9,17 @@
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
         body {
             font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth; /* Added for smoother scrolling */
         }
         /* Custom class for the sticky nav top offset to clear the sticky header */
         .sticky-nav-top {
             top: 160px; /* Adjust this value if the header height changes */
+        }
+        /* Style for the active nav link (used by JS) */
+        .active-nav-link {
+            font-weight: 600;
+            color: #4f46e5; /* indigo-600 */
+            background-color: #eef2ff; /* indigo-100 */
         }
     </style>
 </head>
@@ -26,8 +33,8 @@
             </div>
             <div>
                 <h1 class="text-4xl font-extrabold text-gray-900">Dhruv</h1>
-                <p class="text-xl text-indigo-600 font-medium mt-1">Software Developer</p>
-                <p class="text-md text-gray-500 mt-1">8+ Years of Experience | Full-stack Web Development | Data Engineering</p>
+                <p class="text-xl text-indigo-600 font-medium mt-1">Polyglot Full-stack Web Developer | Data Engineer</p>
+                <p class="text-md text-gray-500 mt-1">8+ Years of experience as a SDE | 3+ years of experience of leading a team</p>
             </div>
         </div>
 
@@ -46,184 +53,197 @@
         </div>
     </header>
     
-    <div class="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
+    <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 flex flex-col md:flex-row gap-8">
 
-        <section id="skills" class="mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 border-b-4 border-indigo-500 pb-2 mb-6">Technical Skills 🛠️</h2>
+        <div class="md:w-1/4 lg:w-1/5">
+            <nav class="sticky sticky-nav-top self-start z-10 w-full bg-white p-4 rounded-xl shadow-lg">
+                <h3 class="text-lg font-bold text-gray-900 mb-4 border-b pb-2">On this page</h3>
+                <ul class="space-y-2">
+                    <li><a href="#about" class="block py-2 px-3 text-gray-600 hover:bg-indigo-100 hover:text-indigo-700 rounded-md font-medium transition duration-300">About Me</a></li>
+                    <li><a href="#skills" class="block py-2 px-3 text-gray-600 hover:bg-indigo-100 hover:text-indigo-700 rounded-md font-medium transition duration-300">Technical Skills</a></li>
+                    <li><a href="#experience" class="block py-2 px-3 text-gray-600 hover:bg-indigo-100 hover:text-indigo-700 rounded-md font-medium transition duration-300">Work Experience</a></li>
+                </ul>
+            </nav>
+        </div>
 
-            <div class="bg-white p-6 rounded-xl shadow-lg">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div>
-                        <h3 class="font-bold text-lg text-indigo-700 mb-2">Python Ecosystem</h3>
-                        <p class="text-sm text-gray-700">Django, Celery, Django Rest Framework, Pandas, BS4, Selenium </p>
-                    </div>
+        <div class="md:w-3/4 lg:w-4/5">
 
-                    <div>
-                        <h3 class="font-bold text-lg text-indigo-700 mb-2">Javascript Ecosystem</h3>
-                        <p class="text-sm text-gray-700">ExpressJS, NodeJS, Prisma, Mongoose </p>
-                    </div>
-
-                    <div>
-                        <h3 class="font-bold text-lg text-indigo-700 mb-2">Databases</h3>
-                        <p class="text-sm text-gray-700">PostgreSQL, Redis, MongoDB </p>
-                    </div>
-
-                    <div>
-                        <h3 class="font-bold text-lg text-indigo-700 mb-2">Cloud</h3>
-                        <p class="text-sm text-gray-700">AWS </p>
-                    </div>
-
-                    <div>
-                        <h3 class="font-bold text-lg text-indigo-700 mb-2">Tools & DevOps</h3>
-                        <p class="text-sm text-gray-700">Docker, Jenkins, Elasticsearch, Kafka, RabbitMQ </p>
-                    </div>
-
+            <section id="about" class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 border-b-4 border-indigo-500 pb-2 mb-6">About Me 🧑‍💻</h2>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <p class="text-gray-700 leading-relaxed">
+                        With over 8 years of experience as a software engineer, I specialize in full-stack web development & data engineering, with a track record of delivering scalable, data-driven solutions across domains such as finance, education, and hospitality. Currently, I work as a Senior Consultant at EY, where I’m part of an engagement with a leading American bank, building systems that support Tax and Audit Management operations. My role spans full-stack development, data engineering, and exploring Generative AI–based automation solutions to enhance process efficiency and decision support within the banking ecosystem.
+                    </p>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="experience" class="mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 border-b-4 border-indigo-500 pb-2 mb-6">Work Experience 💼</h2>
+            <section id="skills" class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 border-b-4 border-indigo-500 pb-2 mb-6">Technical Skills 🛠️</h2>
 
-            <div class="flex flex-col md:flex-row bg-white rounded-xl shadow-lg">
-                
-                <!-- <nav class="md:w-1/4 bg-gray-100 p-4 border-b md:border-b-0 md:border-r border-gray-200 rounded-t-xl md:rounded-l-xl md:rounded-tr-none flex md:flex-col overflow-x-auto whitespace-nowrap md:sticky sticky-nav-top self-start z-10">
-                    <a href="#createbytes" class="block py-2 px-3 text-indigo-600 hover:bg-indigo-200 rounded-md font-semibold transition duration-300 active-nav-link">CreateBytes</a>
-                    <a href="#mongodb" class="block py-2 px-3 text-gray-600 hover:bg-indigo-200 rounded-md font-medium transition duration-300">MongoDB</a>
-                    <a href="#predictive-minds" class="block py-2 px-3 text-gray-600 hover:bg-indigo-200 rounded-md font-medium transition duration-300">Predictive Minds</a>
-                    <a href="#era-infotech" class="block py-2 px-3 text-gray-600 hover:bg-indigo-200 rounded-md font-medium transition duration-300">Era Infotech</a>
-                    <a href="#iit-delhi" class="block py-2 px-3 text-gray-600 hover:bg-indigo-200 rounded-md font-medium transition duration-300">IIT Delhi</a>
-                </nav> -->
-
-                <div class="md:w-3/4 p-6 space-y-10">
-
-                    <div id="createbytes" class="company-details">
-                        <h3 class="text-2xl font-bold text-gray-900">Software Development Engineer III <span class="text-xl font-medium text-indigo-600">@ CreateBytes</span></h3>
-                        <p class="text-sm text-gray-500 mb-4">August 2021 – May 2025 </p>
-
-                        <div class="space-y-4">
-                            <div>
-                                <h4 class="font-semibold text-lg text-gray-800 border-b pb-1 mb-2">Key Highlights</h4>
-                                <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                    <li>Designed and implemented a system to analyze denied loans, **increasing approval rates by 30%**.</li>
-                                    <li>Led a major overhaul of the loan application process, **reducing average completion time from 35 to 15 minutes**.</li>
-                                    <li>Designed a custom automated testing solution, **increasing test coverage from 45% to 80%**.</li>
-                                    <li>Designed an event-based processing system for loan certification, funds disbursement & repayment tracking, **reducing processing time from 2 hours to 5 mins**.</li>
-                                    <li>Engineered a two-step ETL process to automate loan terms data validation and entry.</li>
-                                    <li>Contributed to core system design and unit tests for 75% of the loan application processing system.</li>
-                                    <li>Developed an archival process to move cold data to **MongoDB**.</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-lg text-gray-800 border-b pb-1 mb-2">Technologies Used</h4>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Python</span>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">AWS</span>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">MongoDB</span>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Event Processing</span>
-                            </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div>
+                            <h3 class="font-bold text-lg text-indigo-700 mb-2">Python Ecosystem</h3>
+                            <p class="text-sm text-gray-700">Django, Celery, Django Rest Framework, Pandas, BS4, Selenium </p>
                         </div>
-                    </div>
 
-                    <div id="mongodb" class="company-details pt-8 border-t border-gray-200">
-                        <h3 class="text-2xl font-bold text-gray-900">Associate Consulting Engineer <span class="text-xl font-medium text-indigo-600">@ MongoDB</span></h3>
-                        <p class="text-sm text-gray-500 mb-4">March 2021 – July 2021 </p>
-                        <div class="space-y-4">
-                            <div>
-                                <h4 class="font-semibold text-lg text-gray-800 border-b pb-1 mb-2">Key Highlights</h4>
-                                <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                    <li>Collaborated with 22 engineering teams for clients across multiple countries to identify system bottlenecks.</li>
-                                    <li>Advised on best practices for **MongoDB and MongoDB Atlas** cloud solutions.</li>
-                                    <li>Optimized database schemas, query patterns, and index performance based on in-depth analysis of clients' requirements.</li>
-                                    <li>Prepared and presented detailed technical reports for each client.</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-lg text-gray-800 border-b pb-1 mb-2">Technologies Used</h4>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">MongoDB</span>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">MongoDB Atlas</span>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Database Optimization</span>
-                            </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-indigo-700 mb-2">Javascript Ecosystem</h3>
+                            <p class="text-sm text-gray-700">ExpressJS, NodeJS, Prisma, Mongoose </p>
                         </div>
-                    </div>
 
-                    <div id="predictive-minds" class="company-details pt-8 border-t border-gray-200">
-                        <h3 class="text-2xl font-bold text-gray-900">Freelance Python Developer <span class="text-xl font-medium text-indigo-600">@ Predictive Minds</span></h3>
-                        <p class="text-sm text-gray-500 mb-4">February 2020 – March 2021 </p>
-                        <div class="space-y-4">
-                            <div>
-                                <h4 class="font-semibold text-lg text-gray-800 border-b pb-1 mb-2">Key Highlights</h4>
-                                <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                    <li>Developed a web application that increased analyst team productivity, **reducing each analyst's daily workload by 3 hours**.</li>
-                                    <li>Developed a distributed web scraping service to extract pricing data from aggregators and hotel websites.</li>
-                                    <li>Developed robotic process automation for price data extraction and updates, and built dashboards for real-time tracking.</li>
-                                    <li>Created a periodic report generation service using **Celery and Pandas**.</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-lg text-gray-800 border-b pb-1 mb-2">Technologies Used</h4>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Python</span>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Celery, Pandas</span>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Web Scraping (BS4, Selenium)</span>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">RPA</span>
-                            </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-indigo-700 mb-2">Databases</h3>
+                            <p class="text-sm text-gray-700">PostgreSQL, Redis, MongoDB </p>
                         </div>
-                    </div>
 
-                    <div id="era-infotech" class="company-details pt-8 border-t border-gray-200">
-                        <h3 class="text-2xl font-bold text-gray-900">Freelance Python Developer <span class="text-xl font-medium text-indigo-600">@ Era Infotech</span></h3>
-                        <p class="text-sm text-gray-500 mb-4">January 2018 – December 2019 </p>
-                        <div class="space-y-4">
-                            <div>
-                                <h4 class="font-semibold text-lg text-gray-800 border-b pb-1 mb-2">Key Highlights</h4>
-                                <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                    <li>Delivered 3 projects for an Ed-tech startup aimed at improving student learning and retention.</li>
-                                    <li>Developed web applications using **Django, ReactJS, and PostgreSQL**.</li>
-                                    <li>Deployed applications on **AWS services** including EC2, RDS, S3, and Route53.</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-lg text-gray-800 border-b pb-1 mb-2">Technologies Used</h4>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Django</span>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">ReactJS</span>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">PostgreSQL</span>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">AWS (EC2, RDS, S3, Route53)</span>
-                            </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-indigo-700 mb-2">Cloud & DevOps</h3>
+                            <p class="text-sm text-gray-700">AWS, GCP</p>
                         </div>
+
+                        <div>
+                            <h3 class="font-bold text-lg text-indigo-700 mb-2">Tools</h3>
+                            <p class="text-sm text-gray-700">Docker, Jenkins, Elasticsearch, Kafka, RabbitMQ </p>
+                        </div>
+
                     </div>
+                </div>
+            </section>
+
+            <section id="experience" class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 border-b-4 border-indigo-500 pb-2 mb-6">Work Experience 💼</h2>
+
+                <div class="bg-white rounded-xl shadow-lg">
                     
-                    <div id="iit-delhi" class="company-details pt-8 border-t border-gray-200">
-                        <h3 class="text-2xl font-bold text-gray-900">Project Fellow <span class="text-xl font-medium text-indigo-600">@ Foundation Of Innovation & Technology Transfer - IIT Delhi</span></h3>
-                        <p class="text-sm text-gray-500 mb-4">July 2016 – December 2017 </p>
-                        <div class="space-y-4">
-                            <div>
-                                <h4 class="font-semibold text-lg text-gray-800 border-b pb-1 mb-2">Key Highlights</h4>
-                                <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                    <li>Developed two core modules using **C++ and QT** for an open-source research project (www.piper-project.eu).</li>
-                                    <li>The project centered around manipulating human body models used in car crash simulations.</li>
-                                    <li>Research results were published at the IRCOBI 2017 conference.</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-lg text-gray-800 border-b pb-1 mb-2">Technologies Used</h4>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">C++</span>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">QT</span>
+                    <div class="p-6 space-y-10">
+
+                        <div id="createbytes" class="company-details">
+                            <h3 class="text-2xl font-bold text-gray-900">Software Development Engineer III <span class="text-xl font-medium text-indigo-600">@ CreateBytes</span></h3>
+                            <p class="text-sm text-gray-500 mb-4">August 2021 – May 2025 </p>
+
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-semibold text-lg text-gray-800 border-b pb-1 mb-2">Key Highlights</h4>
+                                    <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                                        <li>Designed and implemented a system to analyze denied loans, **increasing approval rates by 30%**.</li>
+                                        <li>Led a major overhaul of the loan application process, **reducing average completion time from 35 to 15 minutes**.</li>
+                                        <li>Designed a custom automated testing solution, **increasing test coverage from 45% to 80%**.</li>
+                                        <li>Designed an event-based processing system for loan certification, funds disbursement & repayment tracking, **reducing processing time from 2 hours to 5 mins**.</li>
+                                        <li>Engineered a two-step ETL process to automate loan terms data validation and entry.</li>
+                                        <li>Contributed to core system design and unit tests for 75% of the loan application processing system.</li>
+                                        <li>Developed an archival process to move cold data to **MongoDB**.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg text-gray-800 border-b pb-1 mb-2">Technologies Used</h4>
+                                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Python</span>
+                                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">AWS</span>
+                                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">MongoDB</span>
+                                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Event Processing</span>
+                                </div>
                             </div>
                         </div>
+
+                        <div id="mongodb" class="company-details pt-8 border-t border-gray-200">
+                            <h3 class="text-2xl font-bold text-gray-900">Associate Consulting Engineer <span class="text-xl font-medium text-indigo-600">@ MongoDB</span></h3>
+                            <p class="text-sm text-gray-500 mb-4">March 2021 – July 2021 </p>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-semibold text-lg text-gray-800 border-b pb-1 mb-2">Key Highlights</h4>
+                                    <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                                        <li>Collaborated with 22 engineering teams for clients across multiple countries to identify system bottlenecks.</li>
+                                        <li>Advised on best practices for **MongoDB and MongoDB Atlas** cloud solutions.</li>
+                                        <li>Optimized database schemas, query patterns, and index performance based on in-depth analysis of clients' requirements.</li>
+                                        <li>Prepared and presented detailed technical reports for each client.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg text-gray-800 border-b pb-1 mb-2">Technologies Used</h4>
+                                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">MongoDB</span>
+                                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">MongoDB Atlas</span>
+                                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Database Optimization</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="predictive-minds" class="company-details pt-8 border-t border-gray-200">
+                            <h3 class="text-2xl font-bold text-gray-900">Freelance Python Developer <span class="text-xl font-medium text-indigo-600">@ Predictive Minds</span></h3>
+                            <p class="text-sm text-gray-500 mb-4">February 2020 – March 2021 </p>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-semibold text-lg text-gray-800 border-b pb-1 mb-2">Key Highlights</h4>
+                                    <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                                        <li>Developed a web application that increased analyst team productivity, **reducing each analyst's daily workload by 3 hours**.</li>
+                                        <li>Developed a distributed web scraping service to extract pricing data from aggregators and hotel websites.</li>
+                                        <li>Developed robotic process automation for price data extraction and updates, and built dashboards for real-time tracking.</li>
+                                        <li>Created a periodic report generation service using **Celery and Pandas**.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg text-gray-800 border-b pb-1 mb-2">Technologies Used</h4>
+                                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Python</span>
+                                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Celery, Pandas</span>
+                                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Web Scraping (BS4, Selenium)</span>
+                                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">RPA</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="era-infotech" class="company-details pt-8 border-t border-gray-200">
+                            <h3 class="text-2xl font-bold text-gray-900">Freelance Python Developer <span class="text-xl font-medium text-indigo-600">@ Era Infotech</span></h3>
+                            <p class="text-sm text-gray-500 mb-4">January 2018 – December 2019 </p>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-semibold text-lg text-gray-800 border-b pb-1 mb-2">Key Highlights</h4>
+                                    <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                                        <li>Delivered 3 projects for an Ed-tech startup aimed at improving student learning and retention.</li>
+                                        <li>Developed web applications using **Django, ReactJS, and PostgreSQL**.</li>
+                                        <li>Deployed applications on **AWS services** including EC2, RDS, S3, and Route53.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg text-gray-800 border-b pb-1 mb-2">Technologies Used</h4>
+                                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Django</span>
+                                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">ReactJS</span>
+                                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">PostgreSQL</span>
+                                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">AWS (EC2, RDS, S3, Route53)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="iit-delhi" class="company-details pt-8 border-t border-gray-200">
+                            <h3 class="text-2xl font-bold text-gray-900">Project Fellow <span class="text-xl font-medium text-indigo-600">@ Foundation Of Innovation & Technology Transfer - IIT Delhi</span></h3>
+                            <p class="text-sm text-gray-500 mb-4">July 2016 – December 2017 </p>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-semibold text-lg text-gray-800 border-b pb-1 mb-2">Key Highlights</h4>
+                                    <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                                        <li>Developed two core modules using **C++ and QT** for an open-source research project (www.piper-project.eu).</li>
+                                        <li>The project centered around manipulating human body models used in car crash simulations.</li>
+                                        <li>Research results were published at the IRCOBI 2017 conference.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg text-gray-800 border-b pb-1 mb-2">Technologies Used</h4>
+                                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">C++</span>
+                                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">QT</span>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <footer class="text-center text-sm text-gray-500 pt-8 mt-12 border-t border-gray-200">
-            Portfolio created by Dhruv | Built with HTML and Tailwind CSS.
-        </footer>
+            <footer class="text-center text-sm text-gray-500 pt-8 mt-12 border-t border-gray-200">
+                Portfolio created by Dhruv | Built with HTML and Tailwind CSS.
+            </footer>
 
-    </div>
-    
-    <script>
+        </div> </div> <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const navLinks = document.querySelectorAll('nav a');
+            // This selector now correctly targets the new navigation links
+            const navLinks = document.querySelectorAll('nav a'); 
             
             navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
@@ -231,12 +251,12 @@
                     
                     // Remove active class from all
                     navLinks.forEach(l => {
-                        l.classList.remove('active-nav-link', 'text-indigo-600', 'font-semibold');
+                        l.classList.remove('active-nav-link', 'text-indigo-600', 'font-semibold', 'bg-indigo-100');
                         l.classList.add('text-gray-600', 'font-medium');
                     });
                     
                     // Add active class to clicked link
-                    e.target.classList.add('active-nav-link', 'text-indigo-600', 'font-semibold');
+                    e.target.classList.add('active-nav-link', 'text-indigo-600', 'font-semibold', 'bg-indigo-100');
                     e.target.classList.remove('text-gray-600', 'font-medium');
 
                     // Scroll to the target section
@@ -247,6 +267,7 @@
                     if (targetElement) {
                         const headerHeight = document.querySelector('header').offsetHeight;
                         const elementPosition = targetElement.getBoundingClientRect().top;
+                        // This calculation is still correct as it just needs to offset for the top header
                         const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20; // -20 for extra padding
                         
                         window.scrollTo({
@@ -259,7 +280,7 @@
             
             // Set first link as active on load
             if (navLinks.length > 0) {
-                 navLinks[0].classList.add('active-nav-link', 'text-indigo-600', 'font-semibold');
+                 navLinks[0].classList.add('active-nav-link', 'text-indigo-600', 'font-semibold', 'bg-indigo-100');
                  navLinks[0].classList.remove('text-gray-600', 'font-medium');
             }
         });
